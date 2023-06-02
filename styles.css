@@ -1,0 +1,398 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: hsl(197, 70%, 54%);
+  color: #fff;
+  padding: 40px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo img {
+  max-width: 150px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.toggle-container {
+  position: relative;
+}
+
+.toggle {
+  display: none;
+}
+
+.toggle-label {
+  width: 40px;
+  height: 20px;
+  background-color: #888;
+  border-radius: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.toggle-label:before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.toggle:checked + .toggle-label {
+  background-color: #6b3aff;
+}
+
+.toggle:checked + .toggle-label:before {
+  transform: translateX(20px);
+}
+
+/* Main Content Styles */
+main {
+  background-color: #f2f2f2;
+  padding: 50px;
+}
+
+.container {
+  position: relative;
+  perspective: 1000px;
+  padding: 20px 100px;
+}
+
+section {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+}
+
+.section-content {
+  position: relative;
+  backface-visibility: hidden;
+}
+
+/* Card Styles */
+.cards {
+  background-color: #f2f2f2;
+  padding: 40px 0;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.card-content h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #111;
+  color: #fff;
+}
+
+body.dark-mode header {
+  background-color: #222;
+  color: #fff;
+}
+
+body.dark-mode nav ul li a {
+  color: #fff;
+}
+
+body.dark-mode .toggle-label {
+  background-color: #888;
+}
+
+body.dark-mode .toggle-label:before {
+  background-color: #fff;
+}
+
+body.dark-mode main {
+  background-color: #222;
+}
+
+body.dark-mode .container {
+  perspective: 1000px;
+}
+
+body.dark-mode section {
+  background-color: #333;
+}
+
+body.dark-mode .section-content {
+  backface-visibility: hidden;
+}
+
+body.dark-mode footer {
+  background-color: #111;
+  color: #fff;
+}
+
+/* 3D Effect Styles */
+section {
+  transform: translateZ(0);
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  transform-origin: center;
+  transform: translateZ(-50px) scale(1.1);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+section:hover::before {
+  transform: translateZ(-50px) scale(1);
+  opacity: 1;
+}
+
+body.dark-mode section::before {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode section:hover::before {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+/* Feature Section Styles */
+.features {
+  background-color: #f9f9f9;
+  padding: 40px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.feature-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.feature-content {
+  flex-grow: 1;
+}
+
+.feature-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.feature-description {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Additional Styling */
+.features:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+  z-index: -1;
+}
+
+.features .container {
+  position: relative;
+}
+
+.features .container:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+/* About Section Styles */
+.about-us,
+.about-blockchains,
+.about-cryptocurrencies,
+.about-demo-dex {
+  background-color: #f9f9f9;
+  padding: 40px 0;
+}
+
+.about-us .container,
+.about-blockchains .container,
+.about-cryptocurrencies .container,
+.about-demo-dex .container {
+  position: relative;
+}
+
+.about-us .section-title,
+.about-blockchains .section-title,
+.about-cryptocurrencies .section-title,
+.about-demo-dex .section-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.about-us .section-description,
+.about-blockchains .section-description,
+.about-cryptocurrencies .section-description,
+.about-demo-dex .section-description {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+}
+
+.about-us:before,
+.about-blockchains:before,
+.about-cryptocurrencies:before,
+.about-demo-dex:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+  z-index: -1;
+}
+
+.about-us .container:after,
+.about-blockchains .container:after,
+.about-cryptocurrencies .container:after,
+.about-demo-dex .container:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+/* Footer Styles */
+footer {
+  background-color: hsl(200, 100%, 44%);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-icons {
+  margin-bottom: 20px;
+}
+
+.social-icon {
+  color: #fff;
+  font-size: 24px;
+  margin: 0 10px;
+}
+
+.footer-text {
+  font-size: 14px;
+}
+
+
